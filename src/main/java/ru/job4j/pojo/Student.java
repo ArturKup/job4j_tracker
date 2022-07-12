@@ -1,11 +1,12 @@
 package ru.job4j.pojo;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Student {
     private String name;
     private int group;
-    private Date dateOfAdmission;
+    private LocalDate dateOfAdmission;
 
     public String getName() {
         return name;
@@ -23,11 +24,11 @@ public class Student {
         this.group = group;
     }
 
-    public Date getDateOfAdmission() {
+    public LocalDate getDateOfAdmission() {
         return dateOfAdmission;
     }
 
-    public void setDateOfAdmission(Date dateOfAdmission) {
+    public void setDateOfAdmission(LocalDate dateOfAdmission) {
         this.dateOfAdmission = dateOfAdmission;
     }
 }
