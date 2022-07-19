@@ -6,12 +6,13 @@ import org.junit.Test;
 public class FactTest {
 
     @Test(expected = IllegalArgumentException.class)
-    public void WhenTheNIsLessThan0() {
+    public void whenTheNumberIsLessThan0() {
         Fact fact = new Fact();
         fact.calc(-1);
     }
+
     @Test
-    public void When5Then120() {
+    public void when5Then120() {
         Fact fact = new Fact();
         int in = 5;
         int expected = 120;
