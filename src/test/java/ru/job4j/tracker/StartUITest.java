@@ -138,7 +138,7 @@ public class StartUITest {
     }
 
     @Test
-    public void whenFindAllActionIsSuccessfully() {
+    public void whenShowAllItemsActionSuccessfully() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test1"));
