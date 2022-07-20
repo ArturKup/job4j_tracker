@@ -23,6 +23,6 @@ public class FindItemByIdAction implements UserAction {
         } else {
             out.println("Заявка с введенным id: " + id + " не найдена.");
         }
-        return false;
+        return true;
     }
 }
