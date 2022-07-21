@@ -6,18 +6,16 @@ public class UserStore {
         for (User user : users) {
             if (login.equals(user.getUsername())) {
                 return user;
-            } else {
-                throw new UserNotFoundException("User not found");
             }
         }
-        return null;
+        throw new UserNotFoundException("User not found");
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-        if ((user.getUsername().length() < 3) || !user.isValid()) {
+        if (!user.isValid() || user.getUsername().length() < 3) {
             throw new UserInvalidException("User is not valid");
         }
-        return false;
+        return true;
     }
 
     public static void main(String[] args) {
@@ -26,15 +24,13 @@ public class UserStore {
         };
         try {
             User user = findUser(users, "Petr Arsentev");
-            try {
-                if (validate(user)) {
-                    System.out.println("This user has an access");
-                }
-            } catch (UserInvalidException e) {
-                e.printStackTrace();
+            if (validate(user)) {
+                System.out.println("This user has an access");
             }
-        } catch (UserNotFoundException e) {
-            e.printStackTrace();
+        } catch (UserInvalidException ui) {
+            ui.printStackTrace();
+        } catch (UserNotFoundException un) {
+            un.printStackTrace();
         }
     }
 }
