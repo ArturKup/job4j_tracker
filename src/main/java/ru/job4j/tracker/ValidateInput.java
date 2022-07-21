@@ -22,10 +22,10 @@ public class ValidateInput implements Input {
             try {
                 String rsl = in.askStr(question);
                 value = Integer.parseInt(rsl);
+                invalid = false;
             } catch (NumberFormatException e) {
                 out.println("Please enter validate data again.");
             }
-            invalid = false;
         } while (invalid);
         return value;
     }
