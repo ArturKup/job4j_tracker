@@ -1,4 +1,4 @@
-package ru.job4j.collection;
+package ru.job4j.search.collection;
 
 import java.util.List;
 
