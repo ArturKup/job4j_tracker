@@ -7,9 +7,8 @@ public class ConvertMatrix2List {
     public List<Integer> toList(int[][] array) {
         List<Integer> list = new ArrayList<>();
         for (int[] ints : array) {
-            for (int j = 0; j < array.length; j++) {
-                int x = ints[j];
-                list.add(x);
+            for (int cell : ints) {
+                list.add(cell);
             }
         }
         return list;
