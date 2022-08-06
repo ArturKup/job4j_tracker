@@ -41,12 +41,16 @@ public class AnalyzeByMap {
         List<Label> lb = new ArrayList<>();
         int i = 0;
         int a = 0;
-        for (Pupil pupil : pupils) {
-            String str = pupil.subjects.get(i).name;
-            if (str.equals(pupil.subjects.get(i).name)) {
-                a = a + pupil.subjects.get(i).score;
+        for (int j = 0; j < pupils.size(); j++) {
+            for (Pupil pupil : pupils) {
+                String str = pupil.subjects.get(i).name;
+                if (str.equals(pupil.subjects.get(i).name)) {
+                    a = a + pupil.subjects.get(i).score;
+                }
+                map.put(str, a);
             }
-            map.put(str, a);
+            a = 0;
+            i++;
         }
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             String key = entry.getKey();
@@ -81,16 +85,20 @@ public class AnalyzeByMap {
         List<Label> lb = new ArrayList<>();
         int i = 0;
         int a = 0;
-        for (Pupil pupil : pupils) {
-            String str = pupil.subjects.get(i).name;
-            if (str.equals(pupil.subjects.get(i).name)) {
-                a = a + pupil.subjects.get(i).score;
+        for (int j = 0; j < pupils.size(); j++) {
+            for (Pupil pupil : pupils) {
+                String str = pupil.subjects.get(i).name;
+                if (str.equals(pupil.subjects.get(i).name)) {
+                    a = a + pupil.subjects.get(i).score;
+                }
+                map.put(str, a);
             }
-            map.put(str, a);
+            a = 0;
+            i++;
         }
         for (Map.Entry<String, Integer> entry : map.entrySet()) {
             String key = entry.getKey();
-            int value = entry.getValue();
+            Integer value = entry.getValue();
             double db = (double) value;
             Label l = new Label(key, db);
             lb.add(l);
